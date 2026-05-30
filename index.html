@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- v2.1 --><title>Atlantis Barbershop | Forty Fort, PA</title>
+  <title>Atlantis Barbershop | Forty Fort, PA</title>
   <meta name="description" content="Atlantis Barbershop - Premium cuts, fades, and grooming in Forty Fort, PA. Book your appointment today." />
   <!-- Calendly badge widget begin -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
@@ -560,39 +560,39 @@
       gap: 8px;
     }
     .gallery-item {
-      aspect-ratio: 1;
+      aspect-ratio: 3/4;
       overflow: hidden;
-      border-radius: 4px;
+      border-radius: 6px;
       position: relative;
       background: var(--dark3);
+      border: 2px solid transparent;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
     }
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s;
+    .gallery-item:hover {
+      border-color: var(--gold);
+      transform: scale(1.02);
+      box-shadow: 0 12px 40px rgba(201,168,76,0.3);
+      z-index: 2;
     }
-    .gallery-item:hover img { transform: scale(1.06); }
-    .gallery-overlay {
+    .gallery-item .gallery-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(201,168,76,0.15);
+      background: linear-gradient(to top, rgba(201,168,76,0.25) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.3s;
     }
     .gallery-item:hover .gallery-overlay { opacity: 1; }
-
-    /* Gallery placeholders using Instagram embed style */
-    .gallery-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      color: var(--gray);
-      background: linear-gradient(135deg, var(--dark3), var(--dark2));
+    .gallery-item::after {
+      content: '✂';
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      font-size: 20px;
+      color: var(--gold);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
+    .gallery-item:hover::after { opacity: 1; }
 
     /* ===== YOUTUBE ===== */
     #youtube { background: var(--black); }
@@ -1349,22 +1349,22 @@
       </div>
 
       <div class="gallery-grid reveal">
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% 200%; background-position:0% 0%;">
+        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:0% 0%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% 200%; background-position:50% 0%;">
+        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:50% 0%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% 200%; background-position:100% 0%;">
+        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:100% 0%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% 200%; background-position:0% 100%;">
+        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:0% 100%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% 200%; background-position:50% 100%;">
+        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:50% 100%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% 200%; background-position:100% 100%;">
+        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:100% 100%;">
           <div class="gallery-overlay"></div>
         </div>
       </div>
