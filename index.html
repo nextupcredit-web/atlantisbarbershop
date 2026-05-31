@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Atlantis Barbershop | Forty Fort, PA</title>
   <meta name="description" content="Atlantis Barbershop - Premium cuts, fades, and grooming in Forty Fort, PA. Book your appointment today." />
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="shortcut icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
   <!-- Calendly badge widget begin -->
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
@@ -1026,9 +1029,105 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* ===== LOADING SCREEN ===== */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      animation: loaderPulse 1.5s ease-in-out infinite;
+    }
+    .loader-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--gold);
+      letter-spacing: 4px;
+      animation: loaderPulse 1.5s ease-in-out infinite;
+    }
+    .loader-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      letter-spacing: 6px;
+      color: var(--gray);
+    }
+    .loader-bar-wrap {
+      width: 200px;
+      height: 2px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .loader-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+      border-radius: 2px;
+      animation: loaderBar 1.8s ease-in-out forwards;
+    }
+    @keyframes loaderPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    @keyframes loaderBar {
+      0% { width: 0%; }
+      60% { width: 80%; }
+      100% { width: 100%; }
+    }
+    /* Barber pole mini in loader */
+    .loader-pole {
+      width: 30px;
+      height: 90px;
+      position: relative;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 2px solid rgba(200,200,200,0.3);
+    }
+    .loader-pole-stripes {
+      position: absolute;
+      width: 200%;
+      height: 400%;
+      top: 0;
+      left: -50%;
+      background: repeating-linear-gradient(
+        45deg,
+        #CC1F1F 0px, #CC1F1F 8px,
+        white 8px, white 14px,
+        #1A3A8F 14px, #1A3A8F 22px,
+        white 22px, white 28px
+      );
+      animation: poleSwirl 1.5s linear infinite;
+    }
   </style>
 </head>
 <body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-pole">
+      <div class="loader-pole-stripes"></div>
+    </div>
+    <img src="logo.jpg" alt="Atlantis Barbershop" class="loader-logo" />
+    <div class="loader-title">ATLANTIS</div>
+    <div class="loader-sub">BARBERSHOP</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar"></div>
+    </div>
+  </div>
 
   <!-- LANGUAGE BAR -->
   <div class="lang-bar">
@@ -1053,6 +1152,7 @@
       <li><a href="#youtube">Podcast</a></li>
       <li><a href="#products"><span data-lang="en">Shop</span><span data-lang="es">Tienda</span></a></li>
       <li><a href="#reviews"><span data-lang="en">Reviews</span><span data-lang="es">Reseñas</span></a></li>
+      <li><a href="#leave-review"><span data-lang="en">Leave a Review</span><span data-lang="es">Dejar Reseña</span></a></li>
       <li><a href="#hours"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a></li>
       <li><a href="https://calendly.com/barberosonido/30min" target="_blank" class="nav-book-btn"><span data-lang="en">Book Now</span><span data-lang="es">Reservar</span></a></li>
     </ul>
@@ -1070,6 +1170,7 @@
     <a href="#youtube" onclick="closeMenu()">Podcast</a>
     <a href="#products" onclick="closeMenu()"><span data-lang="en">Shop</span><span data-lang="es">Tienda</span></a>
     <a href="#reviews" onclick="closeMenu()"><span data-lang="en">Reviews</span><span data-lang="es">Reseñas</span></a>
+    <a href="#leave-review" onclick="closeMenu()"><span data-lang="en">⭐ Leave a Review</span><span data-lang="es">⭐ Dejar Reseña</span></a>
     <a href="#hours" onclick="closeMenu()"><span data-lang="en">Contact</span><span data-lang="es">Contacto</span></a>
     <a href="https://calendly.com/barberosonido/30min" target="_blank" class="book" onclick="closeMenu()"><span data-lang="en">📅 Book Now</span><span data-lang="es">📅 Reservar Ahora</span></a>
   </div>
@@ -1647,7 +1748,37 @@
     </div>
   </section>
 
-  <!-- HOURS & CONTACT -->
+  <!-- LEAVE A REVIEW -->
+  <section id="leave-review" style="background:var(--black); padding:60px 24px;">
+    <div class="container">
+      <div style="max-width:650px; margin:0 auto; text-align:center; background:var(--dark2); border:1px solid rgba(201,168,76,0.3); border-radius:12px; padding:48px 32px;">
+        <div style="font-size:48px; margin-bottom:16px;">⭐</div>
+        <span class="section-label">
+          <span data-lang="en">SHARE YOUR EXPERIENCE</span>
+          <span data-lang="es">COMPARTE TU EXPERIENCIA</span>
+        </span>
+        <h2 style="font-family:'Playfair Display',serif; font-size:clamp(28px,4vw,42px); font-weight:700; margin:12px 0;">
+          <span data-lang="en">Loved Your <span style="color:var(--gold)">Cut?</span></span>
+          <span data-lang="es">¿Te Gustó Tu <span style="color:var(--gold)">Corte?</span></span>
+        </h2>
+        <p style="color:#aaa; font-size:15px; line-height:1.7; margin:16px 0 32px;">
+          <span data-lang="en">Your review helps other clients find us and means the world to Jhonatan and the team. Takes less than a minute!</span>
+          <span data-lang="es">Tu reseña ayuda a otros clientes a encontrarnos y significa mucho para Jhonatan y el equipo. ¡Toma menos de un minuto!</span>
+        </p>
+        <div style="display:flex; justify-content:center; gap:6px; margin-bottom:28px; font-size:32px; color:var(--gold);">
+          ★★★★★
+        </div>
+        <a href="https://search.google.com/local/writereview?placeid=ChIJIZRIMDAFlfERvS3E-ft-7pA" target="_blank" class="btn-primary" style="font-size:16px; padding:18px 44px; display:inline-block;">
+          <span data-lang="en">⭐ Leave a Google Review</span>
+          <span data-lang="es">⭐ Dejar Reseña en Google</span>
+        </a>
+        <p style="margin-top:16px; font-size:12px; color:var(--gray);">
+          <span data-lang="en">Opens Google Reviews in a new tab</span>
+          <span data-lang="es">Abre Google Reviews en una nueva pestaña</span>
+        </p>
+      </div>
+    </div>
+  </section>
   <section id="hours">
     <div class="container">
       <div class="section-header reveal">
@@ -1756,6 +1887,15 @@
   </footer>
 
   <script>
+    // Loading screen
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+        setTimeout(() => loader.style.display = 'none', 600);
+      }, 1800);
+    });
+
     // Language Toggle
     function setLang(lang) {
       document.body.classList.toggle('lang-es', lang === 'es');
