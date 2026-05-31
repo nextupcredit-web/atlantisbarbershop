@@ -563,7 +563,7 @@
       gap: 8px;
     }
     .gallery-item {
-      aspect-ratio: 3/4;
+      aspect-ratio: 4/5;
       overflow: hidden;
       border-radius: 6px;
       position: relative;
@@ -596,6 +596,15 @@
       transition: opacity 0.3s;
     }
     .gallery-item:hover::after { opacity: 1; }
+    @media (max-width: 600px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+      }
+      .gallery-item {
+        aspect-ratio: 3/4;
+      }
+    }
 
     /* ===== YOUTUBE ===== */
     #youtube { background: var(--black); }
@@ -1121,7 +1130,7 @@
     <div class="loader-pole">
       <div class="loader-pole-stripes"></div>
     </div>
-    <img src="logo.jpg" alt="Atlantis Barbershop" class="loader-logo" />
+    <img src="https://atlantisbarbershop.com/logo.jpg" alt="Atlantis Barbershop" class="loader-logo" />
     <div class="loader-title">ATLANTIS</div>
     <div class="loader-sub">BARBERSHOP</div>
     <div class="loader-bar-wrap">
@@ -1138,7 +1147,7 @@
   <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">
-      <img src="logo.jpg" alt="Atlantis Barbershop Logo" />
+      <img src="https://atlantisbarbershop.com/logo.jpg" alt="Atlantis Barbershop Logo" />
       <div class="nav-logo-text">
         ✂ Atlantis
         <span>BARBERSHOP</span>
@@ -1272,7 +1281,7 @@
         <span data-lang="es">✦ FORTY FORT, PA ✦</span>
       </div>
 
-      <img src="logo.jpg" alt="Atlantis Barbershop" class="hero-logo" style="display:none;" />
+      <img src="https://atlantisbarbershop.com/logo.jpg" alt="Atlantis Barbershop" class="hero-logo" style="display:none;" />
 
       <h1 class="hero-title">
         <span class="gold">ATLANTIS</span><br />
@@ -1391,7 +1400,7 @@
 
       <div class="about-grid reveal">
         <div class="about-img-wrap">
-          <img src="barber-photo.png" alt="Jhonatan - Master Barber at Atlantis Barbershop" class="about-img" />
+          <img src="https://atlantisbarbershop.com/barber-photo.png" alt="Jhonatan - Master Barber at Atlantis Barbershop" class="about-img" />
         </div>
         <div class="about-text">
           <h3 class="about-name">Jhonatan</h3>
@@ -1450,22 +1459,22 @@
       </div>
 
       <div class="gallery-grid reveal">
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:0% 0%;">
+        <div class="gallery-item" style="background-image:url('https://atlantisbarbershop.com/gallery.png'); background-size:300% auto; background-position:16% 10%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:50% 0%;">
+        <div class="gallery-item" style="background-image:url('https://atlantisbarbershop.com/gallery.png'); background-size:300% auto; background-position:50% 10%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:100% 0%;">
+        <div class="gallery-item" style="background-image:url('https://atlantisbarbershop.com/gallery.png'); background-size:300% auto; background-position:84% 10%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:0% 100%;">
+        <div class="gallery-item" style="background-image:url('https://atlantisbarbershop.com/gallery.png'); background-size:300% auto; background-position:16% 90%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:50% 100%;">
+        <div class="gallery-item" style="background-image:url('https://atlantisbarbershop.com/gallery.png'); background-size:300% auto; background-position:50% 90%;">
           <div class="gallery-overlay"></div>
         </div>
-        <div class="gallery-item" style="background-image:url('gallery.png'); background-size:300% auto; background-position:100% 100%;">
+        <div class="gallery-item" style="background-image:url('https://atlantisbarbershop.com/gallery.png'); background-size:300% auto; background-position:84% 90%;">
           <div class="gallery-overlay"></div>
         </div>
       </div>
@@ -1562,7 +1571,7 @@
         <!-- Product 1 -->
         <div class="product-card">
           <div class="product-img-wrap">
-            <img src="product-exfoliating.png" alt="Cocoa and Coffee Exfoliating Scrub" />
+            <img src="https://atlantisbarbershop.com/product-exfoliating.png" alt="Cocoa and Coffee Exfoliating Scrub" />
           </div>
           <div class="product-info">
             <div class="product-brand">BARBERO SONIDO</div>
@@ -1591,7 +1600,7 @@
         <!-- Product 2 -->
         <div class="product-card">
           <div class="product-img-wrap">
-            <img src="product-airbrush.png" alt="Kit Airbrush Barbero Sonido" />
+            <img src="https://atlantisbarbershop.com/product-airbrush.png" alt="Kit Airbrush Barbero Sonido" />
           </div>
           <div class="product-info">
             <div class="product-brand">BARBERO SONIDO</div>
